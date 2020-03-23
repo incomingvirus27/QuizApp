@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Quiz App</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    <section class="container">
+    <div class="row text-center pt-3">
+        <div class="col-md-12">
+            <h2>Javascript Quiz App</h2>
+            <button id="btn" class="btn btn-success m-5" onclick="msg()">Click Me</button>
+            <p id="display"></p>
+            <button id="but" class="btn btn-success sm-btn m-3">Take My Test</button>
+            <p id="display2"></p>
+        </div>
+    </div>
+    </section>  
+  
+    
+<script>
+    const paragraph = document.querySelector('#display');
+    const takequiz = document.querySelector('#but');
+    const paragraphtwo= document.querySelector('#display2');
+    var questions = [
+        ["what is 4 - 2", "5"],
+        ["what is 5 * 2", "10"],
+        ["What is 50/2", "25"]
+    ];   
+  
+function msg(){
+    
+    var a=prompt("what is your name");   
+    paragraph.innerHTML = ("<h3>Welcome to my quiz app<h3> " +a);
+    takequiz.style.visibility = "visible";   
+    takequiz.addEventListener('click', msgOne)
+    function msgOne(){
+      var score;      
+        score = 0;     
+        alert("Here comes the questions " +a);
+        var q1,q2,q3;       
+        q1 = prompt("what is 4 - 2?")
+            if(q1 == 2){
+                score++;
+            console.log("Correct! your score is " +score);
+        }       
+        else{
+            console.log("Wrong Your score is: "+score);
+        }
+        q2 = prompt("what is 5 * 2?")
+            if(q2 == 10){
+                score++;
+            console.log("Correct! your score is " +score);
+        }
+        else{
+            console.log("Wrong Your score is: "+score);
+        }
+        q3 = prompt("what is 50 / 2?")
+            if(q3 == 25){
+                score++;
+            console.log("Correct! your score is " +score);
+        }
+        else{
+            console.log("Wrong Your score is: "+score);
+        }
+        if(score == 3){           
+            paragraph.innerHTML = (`<h5>Your score ${a} is ${score} You passed, welldone!!!.<h5>`);           
+        }
+        else{           
+            paragraph.innerHTML = (`<h5>Your score ${a} is ${score} You can do better than this !.<h5>`);   
+        }
+    }   
+ }
+  
+
+</script>
+
+</body>
+</html>

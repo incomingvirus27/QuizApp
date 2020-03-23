@@ -1,0 +1,7 @@
+.container{
+	margin:30px auto;
+	background-color: #00ffff;
+}
+#but{
+	visibility: hidden;
+}
